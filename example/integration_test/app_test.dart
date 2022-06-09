@@ -3,16 +3,18 @@ import 'package:example/stadium_buttons_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-import 'package:example/main.dart' as app;
+import 'package:example/main.dart';
 
 void main() {
   final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized()
       as IntegrationTestWidgetsFlutterBinding;
   group("Testing app", () {
+    const testApp = MyApp();
+
     testWidgets(
       "Flutter buttons",
       (tester) async {
-        app.main();
+        await tester.pumpWidget(testApp);
         await tester.pumpAndSettle();
 
         /// Check if the BaseButtonsPage exists.
