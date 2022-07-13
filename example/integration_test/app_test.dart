@@ -6,8 +6,7 @@ import 'package:integration_test/integration_test.dart';
 import 'package:example/main.dart';
 
 void main() {
-  final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized()
-      as IntegrationTestWidgetsFlutterBinding;
+  final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   group("Testing app", () {
     const testApp = MyApp();
 

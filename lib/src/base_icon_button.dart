@@ -10,10 +10,19 @@ class BaseIconButton extends StatelessWidget {
   /// The value of [IconButton.onPressed].
   final VoidCallback? onPressed;
 
-  const BaseIconButton({Key? key, required this.icon, this.onPressed}) : super(key: key);
+  /// See [IconButton.splashRadius].
+  final double? splashRadius;
+
+  const BaseIconButton({
+    Key? key,
+    required this.icon,
+    this.onPressed,
+    this.splashRadius,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) => IconButton(
+        splashRadius: splashRadius,
         icon: icon,
         onPressed: onPressed,
       );
